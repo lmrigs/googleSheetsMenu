@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+div#hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/hero-img.jpg");
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+div#hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #DBF7F6;
+    font: 400 2.2rem "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font: bold 1.8rem 'EB Garamond', serif;
+}
+
+h3 {
+    font: bold 1.4rem 'EB Garamond', serif;
+    color: #687575;
+}
+
+p,
+span,
+a {
+    font: 1.1rem 'Montserrat', sans-serif;
+    color: #687575;
+}
+
+a {
+    color: #687575;
+    text-decoration: underline;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    font: 1rem 'Montserrat', sans-serif;
+}
+
+.all-buttons {
+    margin-top: 20px;
+}
+
+#subheader-state {
+    color: #687575;
+    background-color: white;
+    text-align: center;
+
+}
+
+hr {
+    height: 2px;
+    width: 25%;
+    background-color: #72c2bf;
+    margin-top: -20px;
+    border: none;
+}
+
+#states {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 8px 15px 8px;
+
+}
+
+#states button {
+    display: inline-block;
+    width: 30%;
+    margin: 2px;
+    padding: 3px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #687575;
+    background-color: #687575;
+    color: white;
+}
+
+button#all {
+    display: block;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+    padding: 3px;
+    border-radius: 20px;
+    border: 1px solid #687575;
+    background-color: #687575;
+    color: white;
+}
+
+.name-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.restaurant-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -1.5rem;
+}
+
+p.restaurant-location {
+    margin-right: 4rem;
+}
+
+hr#menu-line {
+    height: 1px;
+    width: 80%;
+    background-color: #72c2bf;
+    margin-top: 20px;
+    border: none;
+}
+
+
+.column {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    gap: 3rem 2rem;
+    justify-items: center;
+}
+
+
+img.dish-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    border: 4px solid #72c2bf;
+    border-radius: 10px;
+
+}
+
+.menu-item {
+    display: grid;
+    gap: 1rem 2rem;
+    max-width: 25rem;
+    margin: 1rem;
+  }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #menu-items {
+        grid-template-columns: 225px 1fr;
+        gap: 0 1.25rem;
+        max-width: 40rem;
+    }
+
+    .column {
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #menu-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    .column {
+        width: 95vw;
+        grid-template-columns: 1fr 1fr;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+}
