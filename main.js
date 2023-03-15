@@ -17,13 +17,39 @@ async function initGAPI() {
         plugin_name: "Road trip"
     }),
         gapi.client.sheets.spreadsheets.values.get({
-            spreadsheetId: '1IyWL5OnurZg8hlohcQUXqJ-QpMWjarXJfpkXVUNO1Kg',
-            range: 'Sheet1!A1:J10',
+            spreadsheetId: '1YAK04Fd5yeVL-ySkBsAUrfpuA-_zy-O-v0AY1SxmFRM',
+            range: 'Sheet1!A1:H20',
         }).then(function (response) {
             var range = response.result;
-            if (range.values.length > 0) {
-                console.log(range.values);
-                //@todo: localStorage.setItem('access_token', range.values);
+            var result = [];
+            if (range.values.length > 1) {
+                var headers = range.values[0];
+                for (var i = 1; i < range.values.length; i++) {
+                    var obj = {};
+                    var currentRow = range.values[i];
+                    for (var j = 0; j < headers.length; j++) {
+                        obj[headers[j]] = currentRow[j];
+                    }
+                    result.push(obj);
+                }
+                const column = document.querySelector(".column");
+                // utilize template literals to return the whole original article with each object populated
+                let displayMenu = result.map(function (item) {
+                    return `<article id="${item.id}" class="menu-item">
+                    <div class="name-price">
+                        <h3 class="dish-name">${item.dishName}</h3>
+                        <span class="price">${item.price}</span>
+                    </div>
+                    <img src="${item.dishImage}" alt="${item.dishName}" class="dish-image">
+                    <p class="description">${item.description}</p>
+                    <div class="restaurant-details">
+                        <a href="${item.restaurantURL}" target="_blank" class="restaurant-name">${item.restaurantName}</a>
+                        <p class="restaurant-location">- ${item.restaurantLocation}</p>
+                    </div>
+                    <hr id="menu-line">
+                </article>`;
+                }); displayMenu = displayMenu.join("");
+                column.innerHTML = displayMenu;
             } else {
                 console.log('No data found.');
             }
@@ -31,4 +57,8 @@ async function initGAPI() {
             console.log('Error: ' + response.result.error.message);
         });
 
+
 }
+
+// populating menu section of site with each menu item found in the spreadsheet 
+
