@@ -18,7 +18,7 @@ async function initGAPI() {
     }),
         gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1YAK04Fd5yeVL-ySkBsAUrfpuA-_zy-O-v0AY1SxmFRM',
-            range: 'Sheet1!A1:H20',
+            range: 'Sheet1!A2:H20',
         }).then(function (response) {
             var range = response.result;
             var result = [];
@@ -46,7 +46,6 @@ async function initGAPI() {
                         <a href="${item.restaurantURL}" target="_blank" class="restaurant-name">${item.restaurantName}</a>
                         <p class="restaurant-location">- ${item.restaurantLocation}</p>
                     </div>
-                    <hr id="menu-line">
                 </article>`;
                 }); displayMenu = displayMenu.join("");
                 column.innerHTML = displayMenu;
@@ -61,4 +60,37 @@ async function initGAPI() {
 }
 
 // populating menu section of site with each menu item found in the spreadsheet 
+
+
+
+function showArticles(id) {
+    const articles = document.querySelectorAll('article');
+
+    articles.forEach(article => {
+        if (article.id === id) {
+            article.style.display = 'block';
+        } else {
+            article.style.display = 'none';
+        }
+    });
+}
+
+const state = document.querySelectorAll('button.state');
+
+state.forEach(button => {
+    button.addEventListener('click', event => {
+        const id = event.target.id;
+        showArticles(id);
+    });
+});
+
+const all = document.getElementById('all')
+
+all.addEventListener('click', () => {
+    const articles = document.querySelectorAll('article');
+    articles.forEach(article => {
+        article.style.display = 'block';
+    });
+});
+
 

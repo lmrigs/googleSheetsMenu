@@ -1,0 +1,14 @@
+Logic for filtering in "pick a state" section of site.
+
+"All items" Button:
+- This is the default on first page load. 
+- on click of this button, all other filters are removed and dishes from every id are listed in order of how they appear in spreadsheet
+
+Indinvidual state BUttons:
+- Selecting each button filters results to show only dishes from that state. 
+- Items are identified as being from a state through the article id. For example id="north-carolina" in the article target
+- Items are displayed in the order they are entered in the spreadsheet
+
+-event listener
+-on click
+-hide items w/ id not === to button id 

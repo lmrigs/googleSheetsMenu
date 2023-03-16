@@ -1,3 +1,5 @@
+/* default/mobile styles */
+
 body {
     margin: 0;
     padding: 0;
@@ -42,7 +44,6 @@ a {
 }
 
 a {
-    color: #687575;
     text-decoration: underline;
 }
 
@@ -55,27 +56,11 @@ a:hover {
     cursor: pointer;
 }
 
-button {
-    font: 1rem 'Montserrat', sans-serif;
-}
-
-.all-buttons {
-    margin-top: 20px;
-}
-
 #subheader-state {
     color: #687575;
     background-color: white;
     text-align: center;
 
-}
-
-hr {
-    height: 2px;
-    width: 25%;
-    background-color: #72c2bf;
-    margin-top: -20px;
-    border: none;
 }
 
 #states {
@@ -85,32 +70,64 @@ hr {
     justify-content: space-between;
     align-items: center;
     margin: 10px 8px 15px 8px;
-
-}
-
-#states button {
-    display: inline-block;
-    width: 30%;
-    margin: 2px;
-    padding: 3px;
-    box-sizing: border-box;
-    text-align: center;
-    border-radius: 20px;
-    border: 1px solid #687575;
-    background-color: #687575;
-    color: white;
 }
 
 button#all {
     display: block;
     width: 40%;
-    text-align: center;
     margin: auto;
     padding: 3px;
+}
+
+#states button {
+    display: inline-block;
+    width: 30%;
+    height: 45px;
+    margin: 2px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+button#all,
+#states button {
     border-radius: 20px;
+    text-align: center;
     border: 1px solid #687575;
     background-color: #687575;
     color: white;
+    font: 1rem 'Montserrat', sans-serif;
+}
+
+button#all:hover,
+#states button:hover {
+    cursor: pointer;
+    background-color: #585f5f;
+}
+
+.all-buttons {
+    margin-top
+    : 20px;
+}
+
+.column {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    justify-items: center;
+}
+
+article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 25rem;
+    height: 35rem;
+    margin: 0 1rem;
+    border-bottom: 1px solid #72c2bf;
 }
 
 .name-price {
@@ -120,78 +137,56 @@ button#all {
     align-items: center;
 }
 
+
 div.restaurant-details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: -1.5rem;
 }
 
 p.restaurant-location {
-    margin-right: 4rem;
+    margin-right: 2rem;
 }
-
-hr#menu-line {
-    height: 1px;
-    width: 80%;
-    background-color: #72c2bf;
-    margin-top: 20px;
-    border: none;
-}
-
-
-.column {
-    background-color: #f2f2f2;
-    padding: 10px;
-    width: 90vw;
-    margin: 0 auto;
-    max-width: 1170px;
-    display: grid;
-    gap: 3rem 2rem;
-    justify-items: center;
-}
-
 
 img.dish-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: auto;
+    height: 200px;
+    overflow: hidden;
     border: 4px solid #72c2bf;
     border-radius: 10px;
-
 }
 
-.menu-item {
-    display: grid;
-    gap: 1rem 2rem;
-    max-width: 25rem;
-    margin: 1rem;
-  }
+footer {
+    padding: 1rem;
+    background-color: #687575;
+}
 
-/* Medium devices (landscape tablets, 768px and up) */
+footer p, footer a {
+    color: #DBF7F6;
+    font-size: .8rem;
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    #menu-items {
-        grid-template-columns: 225px 1fr;
-        gap: 0 1.25rem;
-        max-width: 40rem;
-    }
 
     .column {
         background-color: #f2f2f2;
         padding: 20px;
+        grid-template-columns: 225px 1fr;
+        gap: 0 1.25rem;
+        max-width: 40rem;
     }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    #menu-items {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-    }
+/* Larger devices (laptops 1024px and up) */
+@media only screen and (min-width: 1024px) {
+
 
     .column {
         width: 95vw;
@@ -200,3 +195,11 @@ img.dish-image {
         padding: 20px;
     }
 }
+
+
+/* Large devices (large laptops/desktops, 1440px and up) */
+@media only screen and (min-width: 1440px) {}
+
+
+/* XLarge devices (4K destops, 3560px and up) */
+@media only screen and (min-width: 2560px) {}

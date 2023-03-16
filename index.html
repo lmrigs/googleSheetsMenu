@@ -2,11 +2,10 @@
 <html>
 
 <head>
-    <title>Sheets API Quickstart</title>
     <meta charset="utf-8" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Road Trp Eats</title>
+    <title>Road Trip Eats</title>
     <meta name="description" content="Compilation of delicious meals we've eaten on our cross-country road trip.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
@@ -29,14 +28,14 @@
             <hr>
         </div>
         <div class="all-buttons">
-            <button id="all">All Items</button>
+            <button id="all">All Items</button></a>
             <div id="states">
-                <button>North Carolina</button>
-                <button>South Carolina</button>
-                <button>Florida</button>
-                <button>Louisiana</button>
-                <button>Texas</button>
-                <button>California</button>
+                <button class="state" id="north-carolina">North Carolina</button>
+                <button class="state" id="south-carolina">South Carolina</button>
+                <button class="state" id="florida">Florida</button>
+                <button class="state" id="louisiana">Louisiana</button>
+                <button class="state" id="texas">Texas</button>
+                <button class="state" id="california">California</button>
             </div>
         </div>
     </div>
@@ -45,21 +44,24 @@
         <!--menu item -->
         <article id="north-carolina" class="menu-item">
             <div class="name-price">
-                <h3 class="dish-name">Shrimps</h3>
-                <span class="price">$14.99</span>
+                <h3 class="dish-name"></h3>
+                <span class="price"></span>
             </div>
-            <img src="/images/tradingpost_shrimp.jpeg" alt="plate of shrimp" class="dish-image">
-            <p class="description">This delightful morsel at club etoufee includes 5 large shrimp in a delightfulcream
-                sauce</p>
+            <img src="" alt="plate of shrimp" class="dish-image">
+            <p class="description"></p>
             <div class="restaurant-details">
-                <a href="https://www.thetradingpostei.com/" target="_blank" class="restaurant-name">The Trading Post</a>
-                <p class="restaurant-location">- Emerald Isle, NC</p>
+                <a href="https://www.thetradingpostei.com/" target="_blank" class="restaurant-name"></a>
+                <p class="restaurant-location"></p>
             </div>
-            <hr id="menu-line">
         </article>
         <!--menu item -->
-
+        
     </div>
+    <footer>
+        <p>Product design and development by Laura Ariganello</p>
+        <p><a href="mailto:lauramariganello@gmail.com">lauramariganello@gmail.com</a></p>
+    </footer>
+
     <script src="main.js" type="text/javascript"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="loadClient()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
