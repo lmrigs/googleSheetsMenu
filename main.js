@@ -36,17 +36,17 @@ async function initGAPI() {
                 // utilize template literals to return the whole original article with each object populated
                 let displayMenu = result.map(function (item) {
                     return `<article id="${item.id}" class="menu-item">
-                    <div class="name-price">
-                        <h3 class="dish-name">${item.dishName}</h3>
-                        <span class="price">${item.price}</span>
-                    </div>
-                    <img src="${item.dishImage}" alt="${item.dishName}" class="dish-image">
-                    <p class="description">${item.description}</p>
-                    <div class="restaurant-details">
-                        <a href="${item.restaurantURL}" target="_blank" class="restaurant-name">${item.restaurantName}</a>
-                        <p class="restaurant-location">- ${item.restaurantLocation}</p>
-                    </div>
-                </article>`;
+                        <div class="name-price">
+                            <h3 class="dish-name">${item.dishName}</h3>
+                            <span class="price">${item.price}</span>
+                        </div>
+                        <img src="${item.dishImage}" alt="${item.dishName}" class="dish-image">
+                        <p class="description">${item.description}</p>
+                        <div class="restaurant-details">
+                            <a href="${item.restaurantURL}" target="_blank" class="restaurant-name">${item.restaurantName}</a>
+                            <p class="restaurant-location">- ${item.restaurantLocation}</p>
+                        </div>
+                    </article>`;
                 }); displayMenu = displayMenu.join("");
                 column.innerHTML = displayMenu;
             } else {

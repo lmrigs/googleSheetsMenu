@@ -14,6 +14,7 @@ div#hero-image {
     background-size: cover;
     position: relative;
     overflow: hidden;
+    padding: 20px;
 }
 
 div#hero-text {
@@ -63,6 +64,10 @@ a:hover {
 
 }
 
+hr {
+    width: 80%
+}
+
 #states {
     display: flex;
     flex-direction: row;
@@ -74,7 +79,7 @@ a:hover {
 
 button#all {
     display: block;
-    width: 40%;
+    width: 95%;
     margin: auto;
     padding: 3px;
 }
@@ -98,16 +103,19 @@ button#all,
     font: 1rem 'Montserrat', sans-serif;
 }
 
-button#all:hover,
-#states button:hover {
+
+
+button#all:active,
+#states button:active {
     cursor: pointer;
     background-color: #585f5f;
 }
 
 .all-buttons {
-    margin-top
-    : 20px;
+    margin-top: 20px;
 }
+
+
 
 .column {
     background-color: #f2f2f2;
@@ -119,8 +127,8 @@ button#all:hover,
     justify-items: center;
 }
 
+
 article {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -128,6 +136,11 @@ article {
     height: 35rem;
     margin: 0 1rem;
     border-bottom: 1px solid #72c2bf;
+}
+
+p.description {
+    height: 12rem;
+    overflow: auto;
 }
 
 .name-price {
@@ -143,6 +156,15 @@ div.restaurant-details {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 3.5rem;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 0.7rem;
+}
+
+a.restaurant-name,
+p.restaurant-location {
+    font-size: 0.9rem;
 }
 
 p.restaurant-location {
@@ -154,8 +176,9 @@ img.dish-image {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 200px;
-    overflow: hidden;
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: cover;
     border: 4px solid #72c2bf;
     border-radius: 10px;
 }
@@ -165,7 +188,8 @@ footer {
     background-color: #687575;
 }
 
-footer p, footer a {
+footer p,
+footer a {
     color: #DBF7F6;
     font-size: .8rem;
 }
@@ -175,13 +199,32 @@ footer p, footer a {
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
+    div#hero-text {
+        word-spacing: 1rem;
+        font-size: 2.8rem;
+        width: 80%;
+    }
+
+    button#all {
+        width: 97%;
+
+    }
+
     .column {
         background-color: #f2f2f2;
         padding: 20px;
-        grid-template-columns: 225px 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 0 1.25rem;
         max-width: 40rem;
     }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
 }
 
 /* Larger devices (laptops 1024px and up) */
@@ -189,17 +232,132 @@ footer p, footer a {
 
 
     .column {
-        width: 95vw;
+        max-width: 60rem;
         grid-template-columns: 1fr 1fr;
         background-color: #f2f2f2;
         padding: 20px;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 34rem;
+        margin: 0 1rem;
+        border-bottom: 1px solid #72c2bf;
+
+    }
+
+    img.dish-image {
+
+        min-height: 250px;
+        max-height: 250px;
+        object-fit: cover;
+
+    }
+
+    a.restaurant-name,
+    p.restaurant-location {
+        font-size: 1.1rem;
     }
 }
 
 
 /* Large devices (large laptops/desktops, 1440px and up) */
-@media only screen and (min-width: 1440px) {}
+@media only screen and (min-width: 1440px) {
+    div#hero-text {
+        word-spacing: 1rem;
+        font-size: 4rem;
+        width: 80%;
+    }
+
+    button#all {
+        width: 98%;
+
+    }
+
+    .column {
+        max-width: 80rem;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    article {
+        max-width: 22rem;
+        height: 39rem;
+    }
+
+    footer p,
+    footer a {
+        font-size: 1.1rem;
+    }
+
+
+}
 
 
 /* XLarge devices (4K destops, 3560px and up) */
-@media only screen and (min-width: 2560px) {}
+@media only screen and (min-width: 2560px) {
+
+    div#hero-text {
+        word-spacing: 1rem;
+        font-size: 6rem;
+        width: 80%;
+    }
+
+    button#all {
+        width: 99%;
+    }
+
+    button#all,
+    #states button {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 3.8rem;
+        margin: 1rem;
+    }
+
+    h3 {
+        font-size: 2.3rem;
+    }
+
+    span {
+        font-size: 2rem;
+    }
+
+    p.description {
+        font-size: 1.8rem;
+    }
+
+    a.restaurant-name,
+    p.restaurant-location {
+        font-size: 1.8rem;
+    }
+
+    p.description {
+        height: 18rem;
+        overflow: auto;
+    }
+    .column {
+        max-width: 140rem;
+    }
+
+
+    article {
+        max-width: 42rem;
+        height: 58rem;
+    }
+
+    img.dish-image {
+        min-height: 420px;
+        max-height: 420px;
+        object-fit: cover;
+    }
+
+    footer p,
+    footer a {
+        font-size: 1.5rem;
+    }
+
+}
