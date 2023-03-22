@@ -176,8 +176,8 @@ img.dish-image {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    min-height: 200px;
-    max-height: 200px;
+    min-height: 230px;
+    max-height: 230px;
     object-fit: cover;
     border: 4px solid #72c2bf;
     border-radius: 10px;
