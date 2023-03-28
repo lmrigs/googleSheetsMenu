@@ -139,7 +139,7 @@ article {
 }
 
 p.description {
-    height: 12rem;
+    height: 8rem;
     overflow: auto;
 }
 
@@ -156,10 +156,7 @@ div.restaurant-details {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 3.5rem;
-    overflow: hidden;
     padding: 0;
-    margin-bottom: 0.7rem;
 }
 
 a.restaurant-name,

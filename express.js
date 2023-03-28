@@ -4,7 +4,7 @@ const { google } = require('googleapis');
 require('dotenv').config();
 
 const app = express();
-const port = 5400;
+const port = 5600;
 
 // Serve static files from the client directory
 app.use(express.static('client'));
