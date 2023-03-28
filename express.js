@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const port = 5400;
 
-// Serve static files from the public directory
+// Serve static files from the client directory
 app.use(express.static('client'));
 app.use(helmet());
 
